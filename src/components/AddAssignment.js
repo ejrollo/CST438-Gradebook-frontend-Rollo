@@ -87,11 +87,11 @@ class AddAssignment extends Component {
               <br></br>
               <h4>Create New Assignment</h4>
               <form onSubmit={this.handleSubmit}>
-                <input type="text"  value={this.state.name} placeholder="Assignment Name" onChange={this.handleName}  />
+                <input type="text"  name="assign" value={this.state.name} placeholder="Assignment Name" onChange={this.handleName}  />
                 <br></br><br></br>
-                <input type="text"  value={this.state.course} placeholder="Course ID" onChange={this.handleCourse}  />
+                <input type="text"  name="id" value={this.state.course} placeholder="Course ID" onChange={this.handleCourse}  />
                 <br></br><br></br>
-                <input type="text"  value={this.state.date} placeholder="Due Date" onChange={this.handleDate}  />
+                <input type="text"  name="date" value={this.state.date} placeholder="Due Date" onChange={this.handleDate}  />
                 <br></br><br></br>
                 <Button type="submit" variant="outlined" color="primary" style={{margin: 10}}>
                   Submit
