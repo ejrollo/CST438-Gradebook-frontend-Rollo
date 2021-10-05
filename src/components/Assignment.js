@@ -81,10 +81,7 @@ class Assignment extends Component {
                         variant="outlined" color="primary" disabled={this.state.rows.length==0}  style={{margin: 10}}>
                   Grade
                 </Button>
-                <Button component={Link} to={{pathname:'/add'}} variant="outlined" color="primary" name="add"
-                        disabled={this.state.rows.length==0}  style={{margin: 10}}>
-                  AddAssignment
-                </Button>
+                <Button component={Link} to={{pathname:'/add'}} variant="outlined" color="primary" name="add" disabled={this.state.rows.length==0}  style={{margin: 10}}>Add</Button>
           </div>
       )
   }
