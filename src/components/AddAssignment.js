@@ -38,6 +38,7 @@ class AddAssignment extends Component {
           {  
             method: 'PUT', 
             headers: { 'Content-Type': 'application/json','X-XSRF-TOKEN': token }, 
+            credentials: 'include',
             body: JSON.stringify({nameAssign: nameVar, courseID: courseVar, dueDate: dateVar})          
           })
       .then(res => {

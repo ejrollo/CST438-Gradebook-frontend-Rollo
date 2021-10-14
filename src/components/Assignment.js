@@ -28,7 +28,8 @@ class Assignment extends Component {
     fetch(`${SERVER_URL}/gradebook`, 
       {  
         method: 'GET', 
-        headers: { 'X-XSRF-TOKEN': token }
+        headers: { 'X-XSRF-TOKEN': token },
+        credentials: 'include'
       } )
     .then((response) => response.json()) 
     .then((responseData) => { 
