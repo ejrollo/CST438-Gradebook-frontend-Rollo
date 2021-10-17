@@ -27,7 +27,7 @@ class GetGrades extends Component {
       this.state = { rows :  [] };
     } 
           
-    // when submit button pressed, add new assignment.
+    // when submit button pressed, get the grades.
     getGrade (nameVar) {
         console.log("GetGrades.handleSubmit");
         const token = Cookies.get('XSRF-TOKEN');
@@ -47,7 +47,7 @@ class GetGrades extends Component {
                 })
             });
         } else {
-            toast.error("Fetch failed", {
+            toast.error("Get Grade failed", {
                 position: toast.POSITION.BOTTOM_LEFT
             });
         }
@@ -70,17 +70,16 @@ class GetGrades extends Component {
       this.getGrade(this.state.name);
     };
  
-    render() {     
+    render() {             
         const columns = [
-            { field: 'name', headerName: 'Name', width: 250 },
-            { field: 'email', headerName: 'Email', width: 250},
+            { field: 'name', headerName: 'Name', width: 400 },
+            { field: 'email', headerName: 'Email', width: 300},
             { field: 'grade', headerName: 'Grade', width: 150 , editable:true}
-        ];
-
-        const assignment = this.props.location.assignment;
+            ];
+        
         
         return(
-            <div className="App">              
+            <div className="App">     
               <div style={{ height: 400, width: '100%' }}>
               <br></br>
               <h4>Enter Assignment ID To Get Your Grade</h4>
@@ -90,7 +89,10 @@ class GetGrades extends Component {
                 <Button type="submit" variant="outlined" color="primary" style={{margin: 10}}>
                   Submit
                 </Button>
-               </form>                          
+               </form>  
+               <div style={{ height: 400, width: '100%' }}>
+                <DataGrid rows={this.state.rows} columns={columns} />                
+              </div>                        
                 
               </div>
               <ToastContainer autoClose={1500} />   
