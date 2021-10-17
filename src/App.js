@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Gradebook from './components/Gradebook';
 import Assignment from './components/Assignment';
 import AddAssignment from './components/AddAssignment';
+import GetGrades from './components/GetGrades';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route exact path='/assignment' component={Assignment} />
         <Route path='/gradebook' component={Gradebook} />
         <Route path='/add' component={AddAssignment} />
+        <Route path='/getStudentGrade' component={GetGrades} />
        </Switch>
       </BrowserRouter>
     </div>
